@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://service.zenerick.com/notification/command"
+        xmlns:tns="http://service.zenerick.com/notification/command"
+        xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.1"
+        elementFormDefault="qualified">
+
+    <element name="Notify">
+        <complexType>
+            <sequence>
+                <element name="type" type="string"/>
+                <element name="data">
+                    <complexType>
+                        <sequence>
+                            <any>
+                                <annotation>
+                                    <appinfo>
+                                        <jaxb:property name="value"/>
+                                    </appinfo>
+                                </annotation>
+                            </any>
+                        </sequence>
+                        <attribute name="type" type="string"/>
+                    </complexType>
+                </element>
+                <element name="mail" minOccurs="0">
+                    <complexType>
+                        <sequence>
+                            <element name="to" type="string"/>
+                            <element name="cc" type="string" minOccurs="0"/>
+                            <element name="subject" type="string"/>
+                            <element name="attachment" minOccurs="0" maxOccurs="10">
+                                <complexType>
+                                    <sequence>
+                                        <element name="name" type="string"/>
+                                        <element name="location" type="anyURI"/>
+                                    </sequence>
+                                </complexType>
+                            </element>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="sms" minOccurs="0">
+                    <complexType>
+                        <sequence>
+                            <element name="mobile" type="string"/>
+                        </sequence>
+                    </complexType>
+                </element>
+            </sequence>
+        </complexType>
+    </element>
+
+    <element name="Close">
+        <complexType>
+            <sequence>
+                <element name="channel" type="string"/>
+                <element name="status"  type="boolean"/>
+            </sequence>
+        </complexType>
+    </element>
+
+    <element name="retry">
+        <complexType>
+            <sequence>
+                <element name="channel" type="string"/>
+            </sequence>
+        </complexType>
+    </element>
+
+</schema>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://service.zenerick.com/batch"
+        xmlns:tns="http://service.zenerick.com/batch"
+        elementFormDefault="qualified"
+        xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
+        jaxb:version="2.1">
+
+    <import schemaLocation="notification-service.xsd"    namespace="http://service.zenerick.com/notification/command"/>
+    <import schemaLocation="employee-service.xsd"    namespace="http://service.zenerick.com/employee/query"/>
+
+</schema>
