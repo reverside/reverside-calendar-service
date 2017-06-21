@@ -7,10 +7,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-@FeignClient(name="notification", url = "http://localhost:${server.port}")
+@FeignClient(name="notification", url = "http://localhost:8080")
 public interface NotificationService {
 
     @RequestMapping(value = "/api/commands/notify", method = RequestMethod.POST)
-    public void notify(@RequestBody Notify command, @RequestParam("entity") String entity, @RequestParam("user") String user );
+    public void notify(@RequestBody Notify command, @RequestParam("entity") String entity );
 
 }

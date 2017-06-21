@@ -46,7 +46,7 @@ public class BirthdayNotification implements JobHandler<Employee, Notify> {
 
     @Override
     public void process(Notify command) throws Exception {
-        notificationService.notify(command, String.valueOf(UUID.randomUUID()), "scheduler");
+        notificationService.notify(command, String.valueOf(UUID.randomUUID()));
     }
 
 }

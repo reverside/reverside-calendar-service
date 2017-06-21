@@ -9,4 +9,5 @@
     <import schemaLocation="notification-service.xsd"    namespace="http://service.zenerick.com/notification/command"/>
     <import schemaLocation="employee-service.xsd"    namespace="http://service.zenerick.com/employee/query"/>
 
+    <import schemaLocation="birthday-command.xsd"    namespace="http://reverside.co.za/schema"/>
 </schema>

@@ -7,11 +7,13 @@
 
     <xsl:template match="/ns:Employee">
         <Notify xmlns="http://service.zenerick.com/notification/command">
-            <type>BirthdayCommand</type>
-            <tns:BirthdayCommand xmlns:tns="http://reverside.co.za/schema">
-                <tns:name><xsl:value-of select="ns:name"/></tns:name>
-                <tns:photo><xsl:value-of select="ns:photo"/></tns:photo>
-            </tns:BirthdayCommand>
+            <type>Birthday</type>
+            <data type="za.co.reverside.schema.BirthdayCommand">
+                <tns:BirthdayCommand xmlns:tns="http://reverside.co.za/schema">
+                    <tns:name><xsl:value-of select="ns:name"/></tns:name>
+                    <tns:photo><xsl:value-of select="ns:photo"/></tns:photo>
+                </tns:BirthdayCommand>
+            </data>
             <mail>
                 <to><xsl:value-of select="ns:email"/></to>
                 <cc>manmay.e.mohanty@gmail.com</cc>
