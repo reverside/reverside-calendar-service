@@ -1,12 +1,12 @@
-package za.co.reverside.service.calendar.handler;
+package za.co.reverside.service.calendar.executor;
 
-import com.zenerick.service.batch.JobHandler;
+import com.zenerick.service.batch.IExecutor;
 import com.zenerick.service.employee.query.Employee;
 import com.zenerick.service.notification.command.Notify;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import za.co.reverside.service.calendar.service.EmployeeService;
-import za.co.reverside.service.calendar.service.NotificationService;
+import za.co.reverside.service.calendar.client.EmployeeService;
+import za.co.reverside.service.calendar.client.NotificationService;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.util.JAXBResult;
@@ -17,7 +17,7 @@ import java.util.Map;
 import java.util.UUID;
 
 @Component
-public class BirthdayNotification implements JobHandler<Employee, Notify> {
+public class BirthdayExecutor implements IExecutor<Employee, Notify> {
 
     @Autowired
     private JAXBContext jaxbContext;

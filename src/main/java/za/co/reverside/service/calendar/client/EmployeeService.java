@@ -1,4 +1,4 @@
-package za.co.reverside.service.calendar.service;
+package za.co.reverside.service.calendar.client;
 
 import com.zenerick.service.employee.query.Employee;
 import org.springframework.cloud.netflix.feign.FeignClient;

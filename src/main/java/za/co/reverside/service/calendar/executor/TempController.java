@@ -1,4 +1,4 @@
-package za.co.reverside.service.calendar.temp;
+package za.co.reverside.service.calendar.executor;
 
 import com.zenerick.service.employee.query.Employee;
 import com.zenerick.service.notification.command.Notify;
@@ -24,8 +24,4 @@ public class TempController {
         return Arrays.asList(employee);
     }
 
-    @RequestMapping(value = "/api/commands/notify", method = RequestMethod.POST)
-    public void notify(@RequestBody Notify command, @RequestParam("entity") String entity, @RequestParam("user") String user ){
-        System.out.println(command);
-    }
 }
