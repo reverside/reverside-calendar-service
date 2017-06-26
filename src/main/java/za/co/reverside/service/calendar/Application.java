@@ -14,12 +14,10 @@ public class Application {
         SpringApplication.run(Application.class, args);
     }
 
-    @Configuration
-    @ComponentScan(basePackages = "za.co.reverside.service")
+    @ComponentScan(basePackages = "za.co.reverside.service.calendar")
     public static class executors{}
 
-    @Configuration
-    @EnableFeignClients("za.co.reverside.service")
+    @EnableFeignClients("za.co.reverside.service.calendar")
     public static class clients{}
 
 }
