@@ -3,6 +3,7 @@ package za.co.reverside.service.calendar.executor;
 import com.zenerick.service.batch.IExecutor;
 import com.zenerick.service.employee.query.Employee;
 import com.zenerick.service.notification.command.Notify;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import za.co.reverside.service.calendar.client.EmployeeService;
@@ -16,8 +17,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
+@Slf4j
 @Component
-public class BirthdayExecutor implements IExecutor<Employee, Notify> {
+public class BirthdayNotification implements IExecutor<Employee, Notify> {
 
     @Autowired
     private JAXBContext jaxbContext;
@@ -33,7 +35,7 @@ public class BirthdayExecutor implements IExecutor<Employee, Notify> {
 
     @Override
     public List<Employee> query(Map<String, String> parameters) throws Exception {
-        return employeeService.findByBirthday("");
+        return employeeService.findByBirthdayIsToday();
     }
 
     @Override

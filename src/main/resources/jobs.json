@@ -2,7 +2,7 @@
   {
     "name":    "BirthdayNotification",
     "owner":   "manmay.mohanty@reverside.co.za",
-    "executor":"za.co.reverside.service.calendar.executor.BirthdayExecutor",
+    "executor":"za.co.reverside.service.calendar.executor.BirthdayNotification",
     "timer":   "15 * * * * *",
     "parameters": {
       "name" : "value"
